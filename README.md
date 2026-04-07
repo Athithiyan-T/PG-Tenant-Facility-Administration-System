@@ -52,21 +52,60 @@ PG Tenant & Facility Administration System is a full-stack MERN application desi
 ---
 
 ## 📁 Project Structure
-pg-management-system/
-├── backend/
-│ ├── models/
-│ ├── routes/
-│ ├── controllers/
-│ ├── middleware/
-│ ├── config/
-│ └── server.js
+## 📁 Project Structure
+
+```bash
+pg-tenant-facility-admin-system/
 │
-├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ └── App.jsx
-│ │
-│ └── package.json
+├── backend/                           # Node.js + Express Backend
+│   ├── config/                        # Database & config files
+│   │   └── db.js
+│   │
+│   ├── models/                        # Mongoose schemas
+│   │   ├── User.js
+│   │   ├── Room.js
+│   │   ├── Complaint.js
+│   │   └── ServiceRequest.js
+│   │
+│   ├── controllers/                   # Business logic
+│   │   ├── authController.js
+│   │   ├── roomController.js
+│   │   ├── complaintController.js
+│   │   └── serviceController.js
+│   │
+│   ├── routes/                        # API routes
+│   │   ├── authRoutes.js
+│   │   ├── roomRoutes.js
+│   │   ├── complaintRoutes.js
+│   │   └── serviceRoutes.js
+│   │
+│   ├── middleware/                    # Middleware (JWT, role auth)
+│   │   └── authMiddleware.js
+│   │
+│   ├── utils/                         # Helper utilities
+│   │
+│   ├── server.js                      # App entry point
+│   ├── .env                           # Backend environment variables
+│   └── package.json
+|
+├── frontend/                          # React (Vite) Frontend
+│   ├── public/                        # Static files
+│   ├── src/
+│   │   ├── assets/                    # Images, icons
+│   │   ├── components/                # Reusable components
+│   │   ├── pages/                     # Pages (Login, Dashboard, etc.)
+│   │   ├── services/                  # API calls (Axios)
+│   │   ├── context/                   # Global state (Auth context)
+│   │   ├── utils/                     # Helper functions
+│   │   ├── App.jsx                    # Root component
+│   │   └── main.jsx                   # Entry point
+│   │
+│   ├── .env                           # Frontend environment variables
+│   ├── package.json
+│   └── vite.config.js
 │
-└── README.md
+
+│
+├── .gitignore
+├── README.md
+└── package.json                       # (Optional root config)
